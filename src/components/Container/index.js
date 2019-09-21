@@ -5,14 +5,14 @@ import { containerStyles } from './styled';
 import ScrollingText from '../ScrollingText';
 import Campaign from '../Campaign/index';
 
-const Container = () => {
+const Container = (props) => {
   const [ initScroll, setInitScroll ] = useState(false);
 
   useEffect(() => {
-    if(!initScroll) {
+    if(!initScroll && props.initAnim) {
       setInitScroll(true);
     }
-  }, [initScroll]);
+  }, [initScroll, props.initAnim]);
 
   return (
     <section css={containerStyles}>

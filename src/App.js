@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from './components/Container';
 
 function App() {
+  const [ initAnim, setInitAnim ] = useState(false);
+
+  const handleClick = () => {
+    setInitAnim(true);
+  };
+
   return (
     <div className="App">
-      <Container>
-
-      </Container>
+      <button onClick={handleClick}>Start Animation</button>
+      <Container initAnim={initAnim}/>
     </div>
   );
 }
