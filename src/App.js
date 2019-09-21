@@ -7,6 +7,10 @@ import buttonClass from './App.styled';
 function App() {
   const [ initAnim, setInitAnim ] = useState(false);
 
+  /**
+   * Sets the `initAnim` state to `true`
+   * @name handleClick
+   */
   const handleClick = () => {
     setInitAnim(true);
   };

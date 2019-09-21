@@ -3,6 +3,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { jsx } from '@emotion/core';
 import { scrollingTextStyles, Paragraph, Logo } from './styled';
 
+/**
+ * Programmatically smoothly scrolls content to its bottom
+ * @name autoScroll
+ * @param {Object} section - the React ref of the section containing the text container
+ * @param {*} textfullHeight - the full height of the text, as measured by the height of text container 
+ */
 const autoScroll = (section, textfullHeight) => {
   const sectionHeight = section.offsetHeight;
 
