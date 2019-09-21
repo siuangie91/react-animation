@@ -11,7 +11,6 @@ export const scrollingTextStyles = css`
   padding: 0 10px;
   background: #dedede;
   overflow-y: auto;
-  box-shadow: 0 0 8px #666 inset;
 `;
 
 export const Paragraph = styled.p`

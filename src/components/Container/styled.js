@@ -6,6 +6,7 @@ export const containerStyles = css`
   height: 600px;
   border: 1px solid black;
   box-sizing: border-box;
+  overflow: hidden;
 
   * {
     margin: 0;
