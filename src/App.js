@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+/** @jsx jsx */
+import { jsx } from '@emotion/core';
 import Container from './components/Container';
+import buttonClass from './App.styled';
 
 function App() {
   const [ initAnim, setInitAnim ] = useState(false);
@@ -10,7 +13,12 @@ function App() {
 
   return (
     <div className="App">
-      <button onClick={handleClick}>Start Animation</button>
+      <button
+        css={buttonClass}
+        onClick={handleClick}
+      >
+        Start Animation
+      </button>
       <Container initAnim={initAnim}/>
     </div>
   );

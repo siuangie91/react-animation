@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { scrollingTextStyles, Paragraph, Logo } from './styled';
 
 const autoScroll = (section, textfullHeight) => {
   const sectionHeight = section.offsetHeight;
-  
+
   let toBottom, toTop;
 
   toBottom = setInterval(() => {
