@@ -3,17 +3,29 @@ import React, { useState, useEffect, useRef } from 'react';
 import { css, jsx } from '@emotion/core';
 import { scrollingTextStyles, Paragraph, Logo } from './styled';
 
-const scrollToBottom = (section, textfullHeight) => {
+const autoScroll = (section, textfullHeight) => {
   const sectionHeight = section.offsetHeight;
+  
+  let toBottom, toTop;
 
-  var loop = setInterval(function() {
+  toBottom = setInterval(() => {
     let currentPos = section.scrollTop;
     if(currentPos < (textfullHeight - sectionHeight)) {
       section.scrollTop = currentPos + 1;
       currentPos = section.scrollTop;
     } else {
-      clearInterval(loop);
-      loop = undefined;
+      clearInterval(toBottom);
+      toBottom = undefined;
+
+      toTop = setInterval(() => {
+        if(currentPos > 0) {
+          section.scrollTop = currentPos - 10;
+          currentPos = section.scrollTop;
+        } else {
+          clearInterval(toTop);
+          toTop = undefined;
+        }
+      }, 10);
     }
   }, 50);
 };
@@ -29,7 +41,7 @@ const ScrollingText = ({ beginScroll }) => {
       setShouldScroll(true);
 
       const fullHeight = containerRef.current.offsetHeight;
-      scrollToBottom(sectionRef.current, fullHeight);
+      autoScroll(sectionRef.current, fullHeight);
     }
   }, [shouldScroll, beginScroll]);
 
