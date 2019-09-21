@@ -5,6 +5,7 @@ const buttonClass = css`
   position: absolute;
   top: 10px; 
   left: 350px;
+  width: 120px;
   height: 30px;
   border: none;
   border-radius: 3px;
