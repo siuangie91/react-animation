@@ -13,12 +13,15 @@ function App() {
 
   return (
     <div className="App">
-      <button
-        css={buttonClass}
-        onClick={handleClick}
-      >
-        Start Animation
-      </button>
+      {
+        !initAnim && 
+          <button
+            css={buttonClass}
+            onClick={handleClick}
+          >
+            Start Animation
+          </button>
+      }
       <Container initAnim={initAnim}/>
     </div>
   );
