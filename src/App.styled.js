@@ -3,7 +3,7 @@ import { css, jsx, keyframes } from '@emotion/core';
 
 export const animClassName = 'start-btn';
 
-export const buttonClass = css`
+export const buttonStyles = css`
   position: absolute;
   top: 10px; 
   left: 350px;
@@ -21,7 +21,7 @@ export const buttonClass = css`
     box-shadow: none;
   }
 
-  ${/* React Transition Group appends words to your classNames to indicate transition states. http://reactcommunity.org/react-transition-group/transition */}
+  /* React Transition Group appends words to your classNames to indicate transition states. http://reactcommunity.org/react-transition-group/transition */
 
   &.${animClassName}-appear {
     opacity: 0;

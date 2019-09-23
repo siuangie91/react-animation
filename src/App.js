@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { cx, jsx } from '@emotion/core';
 import { CSSTransition } from 'react-transition-group';
 import Container from './components/Container';
-import { buttonClass, animClassName } from './App.styled';
+import { buttonStyles, animClassName } from './App.styled';
 
 function App() {
   const [ initAnim, setInitAnim ] = useState(false);
@@ -26,7 +26,7 @@ function App() {
         unmountOnExit // unmount component when exit transitions are done
       >
         <button
-          css={buttonClass}
+          css={buttonStyles}
           onClick={handleClick}
         >
           Start Animation
