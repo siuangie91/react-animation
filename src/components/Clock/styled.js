@@ -69,7 +69,7 @@ export const Hand = styled.div`
   width: 4px;
   background: red;
   transform-origin: bottom;
-  animation: ${tick} 12s steps(12, end);
+  animation: ${tick} 3000ms steps(12, end);
 
   &:before, &:after {
     ${makePseudo()}  
