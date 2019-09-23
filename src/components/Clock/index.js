@@ -2,12 +2,17 @@ import React from 'react';
 /** @jsx jsx */
 import { cx, jsx } from '@emotion/core';
 import { CSSTransition } from 'react-transition-group';
-import { clockStyles, MinuteHand } from './styled';
+import { clockStyles, Hand, Hash } from './styled';
 
 const Clock = () => {
   return (
     <div css={clockStyles}>
-      <MinuteHand />
+      {
+        Array(12).fill('').map((hour, i) => 
+          <Hash key={i} index={i}/>
+        )
+      }
+      <Hand />
     </div>
   );
 }

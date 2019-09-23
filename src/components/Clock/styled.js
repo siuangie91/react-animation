@@ -49,7 +49,7 @@ export const clockStyles = css`
   }
 `;
 
-export const MinuteHand = styled.div`
+export const Hand = styled.div`
   ${align('centerVert')}
   width: 78px;
   height: 4px;
@@ -62,7 +62,7 @@ export const MinuteHand = styled.div`
   
   &:before {
     top: -3px;
-    left: -2px;
+    left: -3px;
     ${round('10px')}
     background: red;
   }
@@ -77,3 +77,21 @@ export const MinuteHand = styled.div`
     border-color: transparent transparent transparent red;
   }
 `;
+
+export const Hash = styled.div(({ index }) => `
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  transform: rotate(${360/12 * index}deg);
+  transform-origin: bottom;
+
+  &:after {
+    ${makePseudo()}
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: #666;
+  }
+`);
