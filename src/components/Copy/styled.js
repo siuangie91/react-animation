@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 export const copyStyles = css`
   position: absolute;
   width: 100%;
-  top: 10px;
+  top: 20px;
   text-align: center;
 `;
 
