@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { CSSTransition } from 'react-transition-group';

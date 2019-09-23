@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import withAnimContext from '../../context/withAnimContext';

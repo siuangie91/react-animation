@@ -3,10 +3,21 @@ import AnimContext from './AnimContext';
 
 const AnimProvider = ({ children }) => {
   const [ isAnimating, setIsAnimating ] = useState(false);
+  const [ isTicking, setIsTicking ] = useState(false);
 
   const startCampaign = () => {
     setIsAnimating(true);
+  };
+
+  const startClock = () => {
+    setIsTicking(true);
   }
+
+  window.AnimProvider = {
+    isAnimating,
+    startCampaign,
+    startClock
+  };
 
   return (
     <AnimContext.Provider

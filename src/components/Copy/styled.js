@@ -1,17 +1,10 @@
-import { css, keyframes } from '@emotion/core';
-import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
 export const copyStyles = css`
   position: absolute;
   width: 100%;
   top: 20px;
   text-align: center;
-`;
-
-export const CopyBlock = styled.span`
-  display: block;
-  text-align: center;
-  text-transform: uppercase;
 `;
 
 export const timeIsStyles = css`
@@ -24,6 +17,7 @@ export const runningStyles = css`
   font-size: 1.2rem;
   letter-spacing: 0.1rem;
 `;
+
 export const outStyles = css`
   font-size: 3rem;
   font-weight: bold;
