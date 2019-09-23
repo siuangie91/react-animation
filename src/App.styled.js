@@ -21,6 +21,8 @@ export const buttonClass = css`
     box-shadow: none;
   }
 
+  ${/* React Transition Group appends words to your classNames to indicate transition states. http://reactcommunity.org/react-transition-group/transition */}
+
   &.${animClassName}-appear {
     opacity: 0;
   }
