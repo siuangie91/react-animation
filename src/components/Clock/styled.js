@@ -1,23 +1,26 @@
-import { css } from '@emotion/core';
+import { css, keyframes } from '@emotion/core';
 import styled from '@emotion/styled';
 
 const align = (where = 'centerAll') => {
-  const base = `
-    position: absolute;
-    top: 50%;
-    left: 50%;
-  `;
-
   switch(where) {
     case 'centerVert':
       return `
-        ${base}
+        position: absolute;
+        top: 50%;
         transform: translateY(-50%);
+      `;
+    case 'centerHoriz':
+      return `
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
       `;
     case 'centerAll':
     default:
       return `
-        ${base}
+        position: absolute;
+        left: 50%;
+        top: 50%;
         transform: translate(-50%, -50%);
       `;
   }
@@ -35,7 +38,8 @@ const makePseudo = (content = '') => `
 `;
 
 export const clockStyles = css`
-  ${align()}
+  ${align('centerHoriz')}
+  bottom: 20px;
   ${round('180px')}
   border: 4px solid blue;
   box-sizing: border-box;
@@ -49,13 +53,25 @@ export const clockStyles = css`
   }
 `;
 
+const tickPercent = 100/12 * 100;
+
+const tick = keyframes`
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 export const Hand = styled.div`
-  ${align('centerVert')}
-  width: 78px;
-  height: 4px;
+  ${align('centerHoriz')}
+  top: 8px;
+  height: 78px;
+  width: 4px;
   background: red;
-  transform: rotate(-90deg);
-  transform-origin: left;
+  transform-origin: bottom;
+  animation: ${tick} 12s steps(12, end);
 
   &:before, &:after {
     ${makePseudo()}  
@@ -63,7 +79,7 @@ export const Hand = styled.div`
   }
   
   &:before {
-    top: -3px;
+    bottom: -3px;
     left: -3px;
     ${round('10px')}
     background: red;
@@ -71,12 +87,12 @@ export const Hand = styled.div`
 
   &:after {
     top: -5px;
-    right: -4px;
+    left: -5px;
     width: 0;
     height: 0;
     border-style: solid;
-    border-width: 7.5px 0 7.5px 15px;
-    border-color: transparent transparent transparent red;
+    border-width: 0 7.5px 15px 7.5px;
+    border-color: transparent transparent red transparent;
   }
 `;
 
@@ -86,7 +102,7 @@ export const Hash = styled.div(({ index }) => `
   left: 50%;
   width: 2px;
   height: 80px;
-  transform: rotate(${360/12 * index}deg);
+  transform: rotate(${30 * index}deg);
   transform-origin: bottom;
 
   &:after {
