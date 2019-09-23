@@ -1,7 +1,9 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { css, jsx, keyframes } from '@emotion/core';
 
-const buttonClass = css`
+export const animClassName = 'start-btn';
+
+export const buttonClass = css`
   position: absolute;
   top: 10px; 
   left: 350px;
@@ -18,6 +20,17 @@ const buttonClass = css`
     margin-top: 2px;
     box-shadow: none;
   }
-`;
 
-export default buttonClass;
+  &.${animClassName}-appear {
+    opacity: 0;
+  }
+  &.${animClassName}-appear-active {
+    opacity: 1;
+    transition: opacity 800ms;
+  }
+  &.${animClassName}-exit-active {
+    opacity: 0;
+    transition: opacity 800ms;
+    transition-delay: 200ms;
+  }
+`;
