@@ -53,8 +53,6 @@ export const clockStyles = css`
   }
 `;
 
-const tickPercent = 100/12 * 100;
-
 const tick = keyframes`
   from {
     transform: rotate(0);
