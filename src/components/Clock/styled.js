@@ -54,6 +54,8 @@ export const Hand = styled.div`
   width: 78px;
   height: 4px;
   background: red;
+  transform: rotate(-90deg);
+  transform-origin: left;
 
   &:before, &:after {
     ${makePseudo()}  
