@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
+import withAnimContext from '../../context/withAnimContext';
 import { scrollingTextStyles, Paragraph, Logo } from './styled';
 
 /**
@@ -36,25 +37,25 @@ const autoScroll = (section, textfullHeight) => {
   }, 50);
 };
 
-const ScrollingText = ({ beginScroll }) => {
+const ScrollingText = props => {
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   
   const [ shouldScroll, setShouldScroll ] = useState(false);
   
   useEffect(() => {
-    if(!shouldScroll && beginScroll) {
+    if(!shouldScroll && props.context.isAnimating) {
       setShouldScroll(true);
 
       const fullHeight = containerRef.current.offsetHeight;
       autoScroll(sectionRef.current, fullHeight);
     }
-  }, [shouldScroll, beginScroll]);
+  }, [shouldScroll, props.context.isAnimating]);
 
   return (
     <section 
       css={scrollingTextStyles}
-      beginScroll={beginScroll}
+      beginScroll={shouldScroll}
       ref={sectionRef}
     >
       <div ref={containerRef}>
@@ -95,4 +96,4 @@ const ScrollingText = ({ beginScroll }) => {
   );
 };
 
-export default ScrollingText;
+export default withAnimContext(ScrollingText);
