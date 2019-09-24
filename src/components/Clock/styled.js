@@ -37,6 +37,8 @@ const makePseudo = (content = '') => `
   display: block;
 `;
 
+export const animClassName = 'clock';
+
 export const clockStyles = css`
   ${align('centerHoriz')}
   bottom: 20px;
@@ -50,6 +52,14 @@ export const clockStyles = css`
     ${align()}
     ${round('calc(100% - 8px)')};
     border: 4px solid black;
+  }
+
+  &.${animClassName}-enter {
+    opacity: 0;
+  }
+  &.${animClassName}-enter-active {
+    opacity: 1;
+    transition: opacity 600ms;
   }
 `;
 
@@ -70,6 +80,7 @@ export const Hand = styled.div`
   background: red;
   transform-origin: bottom;
   animation: ${tick} 3000ms steps(12, end);
+  animation-delay: 600ms;
 
   &:before, &:after {
     ${makePseudo()}  

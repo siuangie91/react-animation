@@ -12,7 +12,7 @@ export const Block = styled.span(({ animClassName }) => `
   }
   &.${animClassName}-enter-active {
     opacity: 1;
-    transition: opacity 400ms;
+    transition: opacity 1000ms;
     transition-delay: 400ms;
   }
 `);
