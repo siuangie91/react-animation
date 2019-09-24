@@ -41,21 +41,16 @@ const ScrollingText = props => {
   const sectionRef = useRef(null);
   const containerRef = useRef(null);
   
-  const [ shouldScroll, setShouldScroll ] = useState(false);
-  
   useEffect(() => {
-    if(!shouldScroll && props.context.isAnimating) {
-      setShouldScroll(true);
-
+    if(props.context.isScrolling) {
       const fullHeight = containerRef.current.offsetHeight;
       autoScroll(sectionRef.current, fullHeight);
     }
-  }, [shouldScroll, props.context.isAnimating]);
+  }, [props.context.isAnimating, props.context.isScrolling]);
 
   return (
     <section 
       css={scrollingTextStyles}
-      beginScroll={shouldScroll}
       ref={sectionRef}
     >
       <div ref={containerRef}>

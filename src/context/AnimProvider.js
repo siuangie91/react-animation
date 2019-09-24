@@ -3,28 +3,24 @@ import AnimContext from './AnimContext';
 
 const AnimProvider = ({ children }) => {
   const [ isAnimating, setIsAnimating ] = useState(false);
-  const [ isTicking, setIsTicking ] = useState(false);
+  const [ isScrolling, setIsScrolling ] = useState(false);
 
   const startCampaign = () => {
     setIsAnimating(true);
   };
 
-  const startClock = () => {
-    setIsTicking(true);
+  const startScroll = () => {
+    setIsScrolling(true);
   }
-
-  window.AnimProvider = {
-    isAnimating,
-    startCampaign,
-    startClock
-  };
 
   return (
     <AnimContext.Provider
       name="AnimContextProvider"
       value={{
         isAnimating,
-        startCampaign
+        startCampaign,
+        isScrolling,
+        startScroll
       }}
     >
       {children}

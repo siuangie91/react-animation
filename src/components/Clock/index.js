@@ -6,12 +6,20 @@ import withAnimContext from '../../context/withAnimContext';
 import { clockStyles, Hand, Hash, animClassName } from './styled';
 
 const Clock = props => {
+  const handleAnimationEnd = () => {
+    // delay the scroll a little bit for aesthetic purposes
+    setTimeout(() => {
+      props.context.startScroll();
+    }, 800);
+  };
+
   return (
     <CSSTransition
       classNames={animClassName}
       in={props.context.isAnimating}
       mountOnEnter
-      timeout={3000}
+      addEndListener={node => 
+        node.addEventListener('animationend', handleAnimationEnd)}
     >
       <div css={clockStyles}>
         {
