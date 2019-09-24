@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import withAnimContext from '../../context/withAnimContext';
@@ -44,9 +44,9 @@ const ScrollingText = props => {
   useEffect(() => {
     if(props.context.isScrolling) {
       const fullHeight = containerRef.current.offsetHeight;
-      autoScroll(sectionRef.current, fullHeight);
+      autoScroll(props.context.resetAnim, sectionRef.current, fullHeight);
     }
-  }, [props.context.isAnimating, props.context.isScrolling]);
+  }, [props.context.isScrolling]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <section 
