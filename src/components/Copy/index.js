@@ -22,7 +22,6 @@ const Copy = props => {
       <CopyBlock
         animClassName={animClassName}
         inProp={props.context.isAnimating}
-        timeout={1000}
         endHandler={() => {
           setStart2nd(true); // only trigger fadein of 2nd block on transitionend
         }}
@@ -34,7 +33,6 @@ const Copy = props => {
       <CopyBlock
         animClassName={animClassName}
         inProp={start2nd}
-        timeout={1000}
         endHandler={() => {
           setStart3rd(true); // trigger fadein of 3rd block
         }}
@@ -46,7 +44,6 @@ const Copy = props => {
       <CopyBlock
         animClassName={animClassName}
         inProp={start3rd}
-        timeout={1000}
         endHandler={props.context.startClock}
         styles={outStyles}
       >

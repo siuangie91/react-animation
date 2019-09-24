@@ -13,9 +13,8 @@ const CopyBlock = ({ animClassName, inProp, timeout, endHandler, children, style
     <CSSTransition
       classNames={animClassName}
       in={inProp}
-      timeout={timeout}
       mountOnEnter // don't start the fadein until mounted
-      addEndListener={node => handleTransitionEnd(node, endHandler)}
+      addEndListener={node => handleTransitionEnd(node, endHandler)} // with addEndListener, no need for `timeout`
     >
       <Block css={styles} animClassName={animClassName}>{children}</Block>
     </CSSTransition>
