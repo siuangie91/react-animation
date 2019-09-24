@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import AnimProvider from './context/AnimProvider';
+import Annotation from './components/Annotation';
 import Container from './components/Container';
-import StartBtn from './components/StartBtn';
-
 
 function App() {
   return (
     <div className="App">
       <AnimProvider>
-        <StartBtn />
+        <Annotation />
         <Container/>
       </AnimProvider>
     </div>
