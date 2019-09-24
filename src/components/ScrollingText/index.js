@@ -44,7 +44,7 @@ const ScrollingText = props => {
   useEffect(() => {
     if(props.context.isScrolling) {
       const fullHeight = containerRef.current.offsetHeight;
-      autoScroll(props.context.resetAnim, sectionRef.current, fullHeight);
+      autoScroll(sectionRef.current, fullHeight);
     }
   }, [props.context.isScrolling]); // eslint-disable-line react-hooks/exhaustive-deps
 
