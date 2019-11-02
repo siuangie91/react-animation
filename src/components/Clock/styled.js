@@ -39,6 +39,10 @@ const makePseudo = (content = '') => `
 
 export const animClassName = 'clock';
 
+const clockFadeinDuration = '600ms';
+const tickDuration = '3000ms';
+const tickSteps = 12;
+
 export const clock = css`
   ${align('centerHoriz')}
   bottom: 20px;
@@ -61,7 +65,7 @@ export const clock = css`
   }
   &.${animClassName}-enter-active {
     opacity: 1;
-    transition: opacity 600ms;
+    transition: opacity ${clockFadeinDuration};
   }
 `;
 
@@ -86,8 +90,8 @@ export const hand = css`
   background: red;
   ${handShadow}
   transform-origin: bottom;
-  animation: ${tick} 3000ms steps(12, end);
-  animation-delay: 600ms;
+  animation: ${tick} ${tickDuration} steps(${tickSteps}, end);
+  animation-delay: ${clockFadeinDuration};
 
   &:before, &:after {
     ${makePseudo()}  
