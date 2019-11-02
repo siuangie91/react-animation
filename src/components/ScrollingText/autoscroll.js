@@ -16,17 +16,20 @@ export default (section, textfullHeight) => {
       currentPos = section.scrollTop;
     } else {
       clearInterval(toBottom);
-      toBottom = undefined;
+      toBottom = undefined; // ensure interval is cleared
 
-      toTop = setInterval(() => {
-        if(currentPos > 0) {
-          section.scrollTop = currentPos - 10;
-          currentPos = section.scrollTop;
-        } else {
-          clearInterval(toTop);
-          toTop = undefined;
-        }
-      }, 10);
+      // TODO: Is there way to put in a pause without nesting?
+      setTimeout(() => {
+        toTop = setInterval(() => {
+          if(currentPos > 0) {
+            section.scrollTop = currentPos - 10;
+            currentPos = section.scrollTop;
+          } else {
+            clearInterval(toTop);
+            toTop = undefined; // ensure interval is cleared
+          }
+        }, 10);
+      }, 800);
     }
   }, 50);
 };
