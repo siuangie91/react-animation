@@ -29,7 +29,7 @@ export default (section, textfullHeight) => {
             toTop = undefined; // ensure interval is cleared
           }
         }, 10);
-      }, 2400);
+      }, 1600);
     }
   }, 50);
 };
