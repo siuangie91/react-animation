@@ -43,6 +43,18 @@ const clockFadeinDuration = '600ms';
 const tickDuration = '3000ms';
 const tickSteps = 12;
 
+const shake = keyframes`
+  0, 50%, 100% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 5px;
+  }
+  75% {
+    margin-left: -5px;
+  }
+`;
+
 export const clock = css`
   ${align('centerHoriz')}
   bottom: 20px;
@@ -67,6 +79,14 @@ export const clock = css`
     opacity: 1;
     transition: opacity ${clockFadeinDuration};
   }
+`;
+
+export const shaking = css`
+  animation: ${shake};
+  animation-iteration-count: 20;
+  animation-duration: 100ms;
+  animation-timing-function: linear;
+  animation-delay: 400ms;
 `;
 
 const tick = keyframes`
