@@ -23,7 +23,9 @@ const ScrollingText = props => {
       ref={sectionRef}
     >
       <div ref={containerRef}>
-        {text.map((block, i) => <p key={i} css={styled.paragraph}>{block}</p>)}
+        {text.map((block, i) => 
+          <p key={i} css={styled.paragraph}>{block}</p>
+        )}
         <br/>
         <div css={styled.logo}>
           <span css={styled.logoText}>The Logo</span>
