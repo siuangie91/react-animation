@@ -39,12 +39,14 @@ const makePseudo = (content = '') => `
 
 export const animClassName = 'clock';
 
-export const clockStyles = css`
+export const clock = css`
   ${align('centerHoriz')}
   bottom: 20px;
   ${round('180px')}
   border: 4px solid blue;
   box-sizing: border-box;
+  background: #fff;
+  box-shadow: 0 0 11px #000, inset 0 0 14px 4px #333;
 
   &:before {
     content: '';
@@ -78,6 +80,7 @@ export const hand = css`
   height: 78px;
   width: 4px;
   background: red;
+  box-shadow: 2px 0px 4px #333;
   transform-origin: bottom;
   animation: ${tick} 3000ms steps(12, end);
   animation-delay: 600ms;

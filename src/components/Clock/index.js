@@ -21,7 +21,7 @@ const Clock = props => {
       addEndListener={node => 
         node.addEventListener('animationend', handleAnimationEnd)}
     >
-      <div css={styled.clockStyles}>
+      <div css={styled.clock}>
         {
           Array(12).fill('').map((hour, i) => 
             <Hash key={i} index={i}/>
