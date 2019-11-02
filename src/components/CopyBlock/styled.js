@@ -1,8 +1,8 @@
-import styled from '@emotion/styled';
+import { css } from '@emotion/core'
 
 export const animClassName = 'copy';
 
-export const Block = styled.span(({ animClassName }) => `
+export const block = css`
   display: block;
   text-align: center;
   text-transform: uppercase;
@@ -15,4 +15,4 @@ export const Block = styled.span(({ animClassName }) => `
     transition: opacity 1000ms;
     transition-delay: 400ms;
   }
-`);
+`;

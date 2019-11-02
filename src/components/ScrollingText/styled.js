@@ -1,7 +1,6 @@
 import { css } from '@emotion/core';
-import styled from '@emotion/styled';
 
-export const scrollingTextStyles = css`
+export const scrollingText = css`
   position: absolute;
   width: 100%;
   height: 250px;
@@ -13,20 +12,20 @@ export const scrollingTextStyles = css`
   overflow-y: auto;
 `;
 
-export const Paragraph = styled.p`
+export const paragraph = css`
   margin: 10px 0;
 `;
 
-export const Logo = styled.div`
+export const logo = css`
   width: 100px;
   height: 60px;
   background: red;
   transform: skew(-30deg) translateX(20px);
+`;
 
-  span {
-    display: block;
-    line-height: 60px;
-    text-align: center;
-    transform: skew(30deg);
-  }
+export const logoText = css`
+  display: block;
+  line-height: 60px;
+  text-align: center;
+  transform: skew(30deg);
 `;

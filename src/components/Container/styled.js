@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const containerStyles = css`
+export const container = css`
   position: relative;
   left: 300px;
   width: 300px;

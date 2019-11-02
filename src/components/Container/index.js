@@ -1,12 +1,12 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
-import { containerStyles } from './styled';
+import { container } from './styled';
 import ScrollingText from '../ScrollingText';
 import Campaign from '../Campaign/index';
 
 const Container = () => {
   return (
-    <section css={containerStyles}>
+    <section css={container}>
       <Campaign />
       <ScrollingText />
     </section>

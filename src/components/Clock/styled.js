@@ -72,7 +72,7 @@ const tick = keyframes`
   }
 `;
 
-export const Hand = styled.div`
+export const hand = css`
   ${align('centerHoriz')}
   top: 8px;
   height: 78px;

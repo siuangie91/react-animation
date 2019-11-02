@@ -1,9 +1,9 @@
 /** @jsx jsx */
 import { jsx } from '@emotion/core';
 import { CSSTransition } from 'react-transition-group';
-import { Block } from './styled';
+import { block } from './styled';
 
-const CopyBlock = ({ animClassName, inProp, timeout, endHandler, children, styles}) => {
+const CopyBlock = ({ animClassName, inProp, endHandler, children, styles}) => {
   const handleTransitionEnd = (node, fn) => {
     node.addEventListener('transitionend', fn);
   };
@@ -15,7 +15,7 @@ const CopyBlock = ({ animClassName, inProp, timeout, endHandler, children, style
       mountOnEnter // don't start the fadein until mounted
       addEndListener={node => handleTransitionEnd(node, endHandler)} // with addEndListener, no need for `timeout`
     >
-      <Block css={styles} animClassName={animClassName}>{children}</Block>
+      <span css={[block, styles]}>{children}</span>
     </CSSTransition>
   );
 };

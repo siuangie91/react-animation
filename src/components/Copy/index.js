@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { jsx } from '@emotion/core';
 import withAnimContext from '../../context/withAnimContext';
 import CopyBlock from '../CopyBlock';
-import { copyStyles, timeIsStyles, runningStyles, outStyles } from './styled';
+import * as styled from './styled';
 
 const Copy = props => {
   const [ start2nd, setStart2nd ] = useState(false);
@@ -11,21 +11,15 @@ const Copy = props => {
 
   const animClassName = 'copy';
 
-  window.Copy = {
-    start2nd,
-    start3rd,
-    props
-  }
-
   return (
-    <div css={copyStyles}>
+    <div css={styled.copy}>
       <CopyBlock
         animClassName={animClassName}
         inProp={props.context.isAnimating}
         endHandler={() => {
           setStart2nd(true); // only trigger fadein of 2nd block on transitionend
         }}
-        styles={timeIsStyles}
+        styles={styled.timeIs}
       >
         time is
       </CopyBlock>
@@ -36,7 +30,7 @@ const Copy = props => {
         endHandler={() => {
           setStart3rd(true); // trigger fadein of 3rd block
         }}
-        styles={runningStyles}
+        styles={styled.running}
       >
         running
       </CopyBlock>
@@ -45,7 +39,7 @@ const Copy = props => {
         animClassName={animClassName}
         inProp={start3rd}
         endHandler={props.context.startClock}
-        styles={outStyles}
+        styles={styled.out}
       >
         out
       </CopyBlock>

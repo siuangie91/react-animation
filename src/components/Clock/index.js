@@ -2,7 +2,8 @@
 import { jsx } from '@emotion/core';
 import { CSSTransition } from 'react-transition-group';
 import withAnimContext from '../../context/withAnimContext';
-import { clockStyles, Hand, Hash, animClassName } from './styled';
+import * as styled from './styled';
+const { Hash } = styled;
 
 const Clock = props => {
   const handleAnimationEnd = () => {
@@ -14,19 +15,19 @@ const Clock = props => {
 
   return (
     <CSSTransition
-      classNames={animClassName}
+      classNames={styled.animClassName}
       in={props.context.isAnimating}
       mountOnEnter
       addEndListener={node => 
         node.addEventListener('animationend', handleAnimationEnd)}
     >
-      <div css={clockStyles}>
+      <div css={styled.clockStyles}>
         {
           Array(12).fill('').map((hour, i) => 
             <Hash key={i} index={i}/>
           )
         }
-        <Hand />
+        <div css={styled.hand} />
       </div>
     </CSSTransition>
   );
