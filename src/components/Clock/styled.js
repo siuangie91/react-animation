@@ -74,13 +74,17 @@ const tick = keyframes`
   }
 `;
 
+const handShadow = `
+  box-shadow: 2px 0px 4px #333;
+`;
+
 export const hand = css`
   ${align('centerHoriz')}
   top: 8px;
   height: 78px;
   width: 4px;
   background: red;
-  box-shadow: 2px 0px 4px #333;
+  ${handShadow}
   transform-origin: bottom;
   animation: ${tick} 3000ms steps(12, end);
   animation-delay: 600ms;
@@ -95,6 +99,7 @@ export const hand = css`
     left: -3px;
     ${round('10px')}
     background: red;
+    ${handShadow}
   }
 
   &:after {
