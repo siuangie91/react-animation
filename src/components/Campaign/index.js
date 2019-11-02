@@ -1,6 +1,5 @@
-import React from 'react';
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import { campaign } from './styled';
 import Clock from '../Clock';
 import Copy from '../Copy';

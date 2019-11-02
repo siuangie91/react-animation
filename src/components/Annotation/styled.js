@@ -1,6 +1,6 @@
 import { css } from '@emotion/core';
 
-export const annotationStyles = css`
+export const annotation = css`
   position: absolute;
   width: 280px;
   height: auto;
@@ -16,12 +16,12 @@ export const annotationStyles = css`
   }
 `;
 
-export const h1Styles = css`
+export const h1 = css`
   font-size: 28px;
   margin-bottom: 10px;
 `;
 
-export const listStyles = css`
+export const list = css`
   margin: 12px 0 10px 20px;
 
   li {

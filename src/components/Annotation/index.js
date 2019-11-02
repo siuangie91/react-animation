@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import StartBtn from '../../components/StartBtn';
-import { annotationStyles, h1Styles, listStyles } from './styled';
+import * as styled from './styled';
 
 const Annotation = () => {
   return (
-    <div css={annotationStyles}>
-      <h1 css={h1Styles}>React Banner Ad</h1>
+    <div css={styled.annotation}>
+      <h1 css={styled.h1}>React Banner Ad</h1>
       <p>Click Start Animation to start the banner ad.</p>
-      <ol css={listStyles}>
+      <ol css={styled.list}>
         <li>When banner is started, the copy "Time is running out" should fade in, line by line, with a total of 3 lines.</li>
         <li>At the same that the copy begins to fade in, the clock should appear and start ticking.</li>
         <li>The copy and clock should finish animating roughly around the same time.</li>
