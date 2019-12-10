@@ -13,7 +13,7 @@ const Annotation = () => {
         <li>At the same that the copy begins to fade in, the clock should appear and start ticking.</li>
         <li>The copy and clock should finish animating roughly around the same time.</li>
         <li>After a very brief pause, the text will begin to autoscroll to the bottom. (Manual scrolling still works.)</li>
-        <li>When the text reaches the bottom, it will autoscroll back up to the top.</li>
+        <li>When the text reaches the bottom, it will pause briefly and then autoscroll back up to the top.</li>
       </ol>
       <StartBtn />
     </div>
