@@ -1,7 +1,7 @@
 # React Banner Ad 
 A thought experiment to explore CSS animations in React and [React hooks](https://reactjs.org/docs/hooks-intro.html).
 
-**Demo** http://projects.angiesiudevworks.com/reactanimation/
+**Demo** https://react-animation.herokuapp.com/
 
 ## Purpose
 In the real world, there really isn't any reason to build a simple 300x600 banner ad using React; it can easily be done with raw CSS and JavaScript in many different ways, such as by doing a bunch of `setTimeout`s that add classes to HTML elements. However, I thought it would be an interesting thought experiment to make a banner ad using React to learn how to do animations in that environment and also learn about hooks along the way.
