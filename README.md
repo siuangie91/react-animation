@@ -1,5 +1,7 @@
 # React Banner Ad
 
+> ### **:bangbang: This project is archived and no longer maintained.**
+
 A thought experiment to explore CSS animations in React and [React hooks](https://reactjs.org/docs/hooks-intro.html).
 
 **Demo** https://react-animation.onrender.com
